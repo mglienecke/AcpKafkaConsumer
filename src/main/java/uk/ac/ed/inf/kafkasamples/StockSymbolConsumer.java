@@ -16,8 +16,17 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Properties;
 
+/**
+ * a simple stock symbol consumer (generated values)
+ */
 public class StockSymbolConsumer {
 
+    /**
+     * launch the consumer
+     * @param args
+     * @throws IOException
+     * @throws InterruptedException
+     */
     public static void main(String[] args) throws IOException, InterruptedException {
         if (args.length != 1) {
             System.out.println("Please provide the configuration file path as a command line argument");
@@ -44,6 +53,12 @@ public class StockSymbolConsumer {
     public final String StockSymbolsConfig = "stock.symbols";
     public final String KafkaTopicConfig = "kafka.topic";
 
+    /**
+     *
+     * @param configFileName
+     * @throws IOException
+     * @throws InterruptedException
+     */
     private void process(String configFileName) throws IOException, InterruptedException {
         Properties kafkaPros = StockSymbolConsumer.loadConfig(configFileName);
 
