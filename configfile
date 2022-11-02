@@ -17,4 +17,4 @@ value.deserializer=org.apache.kafka.common.serialization.StringDeserializer
 
 # symbols to use
 stock.symbols=AAPL,MSFT,GOOG,AMZN,TSLA
-kafka.topic=stockvalues
+kafka.topic=processedstockvalues
