@@ -1,5 +1,5 @@
 # bootstrap.servers=localhost:9092
-bootstrap.servers=pkc-ldvmy.centralus.azure.confluent.cloud:9092
+bootstrap.servers=XZY
 
 security.protocol=SASL_SSL
 sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule required username='XXXX' password='ZZZZ';
