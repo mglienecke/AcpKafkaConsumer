@@ -34,8 +34,7 @@ public class StockSymbolConsumer {
             System.exit(1);
         }
 
-        var consumer = new StockSymbolConsumer();
-        consumer.process(args[0]);
+        // TODO: create a consumer and call the method to process the messages
     }
 
 
@@ -78,7 +77,7 @@ public class StockSymbolConsumer {
     private void process(String configFileName) throws IOException, InterruptedException {
         Properties kafkaPros = StockSymbolConsumer.loadConfig(configFileName);
 
-        var consumer = new KafkaConsumer(kafkaPros);
+        // TODO: Create the consumer
 
         int recordCount = 0;
         final String topic = kafkaPros.getProperty(KafkaTopicConfig);
@@ -89,14 +88,17 @@ public class StockSymbolConsumer {
             currentSymbolValueMap.put(symbol, Double.NaN);
         }
 
-        consumer.subscribe(Collections.singletonList(topic));
+        // TODO: Subscribe to the topics you are interested in
 
         int iteration = 1;
 
         while (true) {
-            ConsumerRecords<String, String> records = consumer.poll(Duration.ofMillis(100));
+            // TODO: Poll for records with a duration of 100 msec
+            ConsumerRecords<String, String> records = xxx );
+
             for (ConsumerRecord<String, String> record : records){
-                if (currentSymbolValueMap.containsKey(record.key())){
+                // TODO: check if the symbol is in your list of acceptable symbols
+                if (currentSymbolValueMap....){
                     currentSymbolValueMap.put(record.key(), Double.parseDouble(record.value()));
 
                     System.out.println(String.format("[%s] %s: %s %s %s %s", record.topic(), record.key(), record.value(), record.partition(), record.offset(), record.timestamp()));
@@ -106,7 +108,7 @@ public class StockSymbolConsumer {
                 }
             }
 
-            Thread.sleep(500);
+            // TODO: have a nap for 500 msec
             System.out.println("Iteration: " + iteration + " - " + recordCount + " records received Kafka");
             iteration += 1;
         }
