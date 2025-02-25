@@ -90,7 +90,7 @@ public class StockSymbolConsumer {
                 }
             }
 
-            // Thread.sleep(100);
+            Thread.sleep(500);
             System.out.println("Iteration: " + iteration + " - " + recordCount + " records received Kafka");
             iteration += 1;
         }
